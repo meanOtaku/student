@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add student Detail</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="details">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><%= Student.name %></td>
+            </tr>
+            <tr>
+                <td>Class:</td>
+                <td><%= Student.class %></td>
+            </tr>
+            <tr>
+                <td>Contact:</td>
+                <td><%= Student.contact %></td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td><%= Student.year %></td>
+            </tr>
+            <% var x = 1 %> 
+            <% var y = 1 %> 
+            <tr><td>Subjects:</td></tr>
+            <% Student.subjects.forEach(function(subject){ %>   
+                <tr>
+                    <td>
+                        <%= x %> 
+                    <%= "." %> 
+                    <%= subject %> 
+                    </td>
+                </tr>
+                <% x = x + 1 %> 
+            <% }) %> 
+            <tr><td>Society:</td></tr>
+            <% Student.societies.forEach(function(society){ %>   
+                <tr>
+                    <td>
+                        <%= y %> 
+                    <%= "." %> 
+                    <%= society %> 
+                    </td>
+                </tr>
+                <% y = y + 1 %> 
+            <% }) %>     
+        </table>
+    </div>
+    <h1>Add Student</h1>
+    <form class="form" action="/addSubject/<%= Student._id %>" method="post">
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject">
+        <br>
+        <button type="submit">Add</button>
+    </form>
+    <form class="form" action="/addSociety/<%= Student._id %>" method="post">
+        <label for="society">Society:</label>
+        <input type="text" name="society" id="society">
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

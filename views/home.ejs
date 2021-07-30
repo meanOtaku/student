@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <% Students.forEach(function(Student){ %> 
+        <div class="card">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><%= Student.name %></td>
+                </tr>
+                <tr>
+                    <td>Class:</td>
+                    <td><%= Student.class %></td>
+                </tr>
+                <tr>
+                    <td>Contact:</td>
+                    <td><%= Student.contact %></td>
+                </tr>
+                <tr>
+                    <td>Year:</td>
+                    <td><%= Student.year %></td>
+                </tr>
+                <% var x = 1 %> 
+                <% var y = 1 %> 
+                <tr><td>Subjects:</td></tr>
+                <% Student.subjects.forEach(function(subject){ %>   
+                    <tr>
+                        <td>
+                            <%= x %> 
+                        <%= "." %> 
+                        <%= subject %> 
+                        </td>
+                    </tr>
+                    <% x = x + 1 %> 
+                <% }) %> 
+                <tr><td>Society:</td></tr>
+                <% Student.societies.forEach(function(society){ %>   
+                    <tr>
+                        <td>
+                            <%= y %> 
+                        <%= "." %> 
+                        <%= society %> 
+                        </td>
+                    </tr>
+                    <% y = y + 1 %> 
+                <% }) %>     
+            </table>
+            <a href="/Student/<%= Student._id %>">Add more Details</a>   
+        </div>
+    <% }) %> 
+    <h1>Add Student</h1>
+    <form class="form" action="/add" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="class">Class:</label>
+        <input type="text" name="class" id="class">
+        <br>
+        <label for="contact">contact:</label>
+        <input type="text" name="contact" id="contact">
+        <br>
+        <label for="year">Year:</label>
+        <input type="text" name="year" id="year">
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

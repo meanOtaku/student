@@ -1,0 +1,55 @@
+.card{
+    background-color: antiquewhite;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    display: inline-block;
+    position:relative;
+    border-radius: 10%;
+    outline: 1px dotted black;
+}
+body{
+    background-color: beige;
+}
+.form{
+    background-color:darkseagreen;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 10%;
+}
+.details{
+    background-color: antiquewhite;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    display: inline-block;
+    position: relative;
+    border-radius: 10%;
+    outline: 1px dotted black;
+}
+.subject{
+    background-color: rgb(158, 206, 190);
+    border-color: black;
+    border-width: 2px;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    outline: 1px dotted black;
+}
+.society{
+    background-color: aquamarine;
+    border-color: black;
+    border-width: 2px;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    outline: 1px dotted black;
+}
+a{
+    display: inline-flex;
+    padding: 2%;
+    outline: 1px dotted black;
+}
